@@ -6,7 +6,7 @@ def crearFacebook():
     pais = input("Pais del usuario:\n> ")
     correo = input("Correo del usuario:\n> ")
     resumen = (f"----Cuenta de Facebook creada----\n"
-               f"Nombre del usuario: {nombre}\nNombre del usuario: {edad}\nCiudad del usuario: {ciudad}\n"
+               f"Nombre del usuario: {nombre}\nEdad del usuario: {edad}\nCiudad del usuario: {ciudad}\n"
                f"Pais del usuario: {pais}\nCorreo del usuario: {correo}\n")
     return resumen
 
@@ -103,13 +103,12 @@ if __name__ == "__main__":
     contador = 0
     while bandera:
         opcion = int(input("Ingrese 1 si desea crear una cuenta de Facebook\n"
-                           + "Ingrese 2 si desea crear una cuenta de twitter\n"
+                           + "Ingrese 2 si desea crear una cuenta de Twitter\n"
                            + "Ingrese 3 si desea crear una cuenta de Whatsapp\n"
                            + "Ingrese 6 si desea crear una cuenta de Telegram\n"
-                           + "Ingrese 5 si desea crear una cuenta de Instagram\n"
-                           + "Ingrese 6 si desea crear una cuenta de Flickr\n"
-                           + "Ingrese 7 si desea crear una cuenta de twitter\n>"))
-        contador = contador + 1
+                           + "Ingrese 5 si desea crear una cuenta de Signal\n"
+                           + "Ingrese 6 si desea crear una cuenta de Instagram\n"
+                           + "Ingrese 7 si desea crear una cuenta de Flickr\n> "))
         if opcion == 1:
             print(crearFacebook())
         elif opcion == 2:
@@ -126,7 +125,8 @@ if __name__ == "__main__":
             print(crearFlickr())
         else:
             print("No es una opcion a seleccionar")
-        salida = input("Ingrese (si) en caso que desee salir del ciclo\n> ")
-        if salida == "si":
+        contador = contador + 1
+        salida = int(input("Ingrese el numero 1 si desea salir del ciclo\n> "))
+        if salida == 1:
             bandera = False
-    print(obtenerMensaje(contador))
+    print("La campaña es una: " + obtenerMensaje(contador))

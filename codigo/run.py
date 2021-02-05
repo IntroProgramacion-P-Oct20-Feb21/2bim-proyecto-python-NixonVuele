@@ -89,6 +89,8 @@ def crearFlickr():
 def obtenerMensaje(cuentasCreadas):
     mensaje = ""
     mensajeFinal = ["Campaña con poca afluencia", "Campaña moderada siga adelante", "Excelente campaña"]
+    if cuentasCreadas == 0:
+        mensaje = "campaña sin nada de afluencia"
     if (cuentasCreadas >= 1) and (cuentasCreadas <= 5):
         mensaje = mensajeFinal[0]
     elif (cuentasCreadas >= 6) and (cuentasCreadas <= 15):
@@ -124,6 +126,7 @@ if __name__ == "__main__":
         elif opcion == 7:
             print(crearFlickr())
         else:
+            contador = contador - 1
             print("No es una opcion a seleccionar")
         contador = contador + 1
         salida = int(input("Ingrese el numero 1 si desea salir del ciclo\n> "))
